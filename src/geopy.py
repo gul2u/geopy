@@ -1,42 +1,13 @@
 #!/usr/bin/env python
 
-class YelpKml(object):
+class GeoPy(object):
 	@classmethod
 	def main(self, args):
-		## 1. Import list of yelp URLs from file
-		#
-		#
+		# Import list of yelp URLs from file
 		print "Parsing urls from file..."
 		file = open(args['f'])
 
-		## 2. Parse Name + (Lat, Lng) from yelp via GET request
-		#
-		#
-		## DEPRECATED - Yelp provides lat, lng via meta data tags in header; leaving code here in case Yelp removes meta data for any reason
-		## Parse Address
-		#address =  page.xpath('//span[@itemprop='streetAddress']')[0]
-		#city =  page.xpath('//span[@itemprop='addressLocality']')[0]
-		#state =  page.xpath('//span[@itemprop='addressRegion']')[0]
-		#zip =  page.xpath('//span[@itemprop='postalCode']')[0]
-				
-
-		## DEPRECATED - Yelp provides lat, lng via meta data tags in header; leaving code here in case Yelp removes meta data for any reason
-		## Convert Address to (Lat, Lng) via Google Maps Web Service API
-		#gmapsUrl = "http://maps.googleapis.com/maps/api/geocode/xml?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&sensor=false"
-
-		#geocodeResponse = ET.XML(urllib.urlopen(gmapsUrl).read())
-		#geocodeResponse = ET.parse('geo.xml').getroot()
-
-		#status = geocodeResponse.find('status').text
-		#if status == 'OK':
-		#	lat = geocodeResponse.find('.//location/lat').text
-		#	lng = geocodeResponse.find('.//location/lng').text
-		#	locations['Ampitheatre Parkway'] = {'lat':lat, 'lng':lng}
-
-					
-		## 4. Pull meta data and construct KML
-		#
-		#
+		# Pull meta data and construct KML
 		print "Getting Lat/Lng meta data from Yelp..."
 
 		kml = ET.Element('kml')
