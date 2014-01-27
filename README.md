@@ -1,8 +1,8 @@
-# YelpKml
+# GeoPy
 
-A Python-based script hacked together in an attempt to convert a list of Yelp urls into a Google Map.
+A Python-based script hacked together to convert a list of Yelp urls into a Google Map compatible KML file.
 
-Given Google's limited support of web service APIs for constructing maps dynamically, the next best thing that doesn't require use of Google Map's JavaScript API is to construct a KML document and upload it through Google Map's interface - the end result: a Yelp to Kml conversion script.
+Google's web service APIs currently lack support for constructing maps dynamically without a hosted web application w/ their Javascript API, thus the need for scripting together a KML document to be uploaded through Google Map's interface.
 
 You can read more about Google's Map APIs below:
   * [JavaScript API v3](https://developers.google.com/maps/documentation/javascript/tutorial)
@@ -14,7 +14,7 @@ Url requests are sent using [urllib](http://docs.python.org/2/library/urllib.htm
 
 Asyncronous runtime for converting 31 listings to kml was averaging out at ~65000ms.
 
-In stumbling upon [gevent](http://sdiehl.github.io/gevent-tutorial/) from [stackoverflow](http://stackoverflow.com/questions/14616883/multithreading-asynchronous-i-o) synchronous runtime average was brought down to *~8000ms* - that's a riduculous amount of runtime perf improved. It is likely that this may not scale out entirely as the number of outgoing requests increases however discovering the power of *gevent* and multithreaded processing was well worth it.
+The [gevent](http://sdiehl.github.io/gevent-tutorial/) variation ([stackoverflow](http://stackoverflow.com/questions/14616883/multithreading-asynchronous-i-o)) improves the runtime average to *~8000ms* through asynchronous exectution of HTTP requests. It is possoble this may not scale out entirely as the threshold of outgoing requests increases however discovering the power of *gevent* and multithreaded processing was well worth it.
 
 If you are having trouble installing gevent on Ubuntu see [here](http://stackoverflow.com/questions/6431096/gevent-does-not-install-properly-on-ubuntu)
 
