@@ -23,7 +23,7 @@ If you are having trouble installing gevent on Ubuntu see [here](http://stackove
 Python 2.7.2 was used to execute the code:
 
 ```bash
-$ python YelpKml.py --f [FILENAME]
+$ python geopy.py --f [FILENAME]
 ```
 
 ### Options and Arguments
