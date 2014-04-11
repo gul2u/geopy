@@ -12,9 +12,9 @@ You can read more about Google's Map APIs below:
 
 Url requests are sent using [urllib](http://docs.python.org/2/library/urllib.html), Html parsing is done via [lxml](http://lxml.de/), and Xml/Kml parsing/construction done via [xml.etree.ElementTree](http://docs.python.org/2/library/xml.etree.elementtree.html) and [xml.dom](http://docs.python.org/2/library/xml.dom.minidom.html)
 
-Asyncronous runtime for converting 31 listings to kml was averaging out at ~65000ms.
+Asyncronous runtime for converting 30 listings to kml was averaging out at ~65000ms.
 
-The [gevent](http://sdiehl.github.io/gevent-tutorial/) variation ([stackoverflow](http://stackoverflow.com/questions/14616883/multithreading-asynchronous-i-o)) improves the runtime average to *~8000ms* through asynchronous exectution of HTTP requests. It is possoble this may not scale out entirely as the threshold of outgoing requests increases however discovering the power of *gevent* and multithreaded processing was well worth it.
+The [gevent](http://sdiehl.github.io/gevent-tutorial/) variation ([stackoverflow](http://stackoverflow.com/questions/14616883/multithreading-asynchronous-i-o)) improves the runtime average to *~8000ms* through asynchronous execution of HTTP requests. It is possible this may not scale out entirely as the threshold of outgoing requests increases however discovering the power of *gevent* and multithreaded processing was well worth it.
 
 If you are having trouble installing gevent on Ubuntu see [here](http://stackoverflow.com/questions/6431096/gevent-does-not-install-properly-on-ubuntu)
 
